@@ -1,84 +1,88 @@
-Advanced Resume Analyzer
+**Advanced Resume Analyzer**
 
-Project Overview
+**Project Overview**
 
 The Advanced Resume Analyzer is an AI-powered evaluation system that automates resume assessment, scores candidates based on job requirements, and generates professional feedback emails with selection decisions.
 
-It comprises two integrated applications:
 
-Resume Collecting App: Collects resumes from candidates and saves them to the uploaded_resumes folder.
+**It comprises two integrated applications:**
 
-Resume Analysis App: Analyzes collected resumes, evaluates their alignment with the provided job description, and generates personalized feedback for recruiters and candidates.
+**Resume Collecting App:** Collects resumes from candidates and saves them to the uploaded_resumes folder.
 
-Key Features
+**Resume Analysis App:** Analyzes collected resumes, evaluates their alignment with the provided job description, and generates personalized feedback for recruiters and candidates.
 
-Resume Upload Interface: Candidates can easily upload their resumes.
+**Key Features:**
 
-Automated Resume Scoring: Uses advanced NLP techniques and Word2Vec similarity to match resumes with job descriptions.
+- **Resume Upload Interface:** Candidates can easily upload their resumes.
 
-Candidate Evaluation: Extracts contact details, skills, and work experience to evaluate resume content.
+- **Automated Resume Scoring:** Uses advanced NLP techniques and Word2Vec similarity to match resumes with job descriptions.
 
-Professional Feedback Generation: Produces recruiter insights and auto-generates email drafts (decision of selection or rejection) with constructive feedback.
+- **Candidate Evaluation**: Extracts contact details, skills, and work experience to evaluate resume content.
 
-Technologies Used
+- **Professional Feedback Generation**: Produces recruiter insights and auto-generates email drafts (decision of selection or rejection) with constructive feedback.
 
-Python
+**Technologies Used**
 
-PyMuPDF, textract, docx.Document – For resume extraction from various document formats.
+- Python
 
-Regular Expressions (re) – For extracting contact details, skills, and work experience.
+- PyMuPDF, textract, docx.Document – For resume extraction from various document formats.
 
-NLTK (WordNetLemmatizer, word_tokenize) – Text preprocessing and tokenization.
+- Regular Expressions (re) – For extracting contact details, skills, and work experience.
 
-TensorFlow Hub – Universal Sentence Encoder – For semantic similarity evaluation.
+- NLTK (WordNetLemmatizer, word_tokenize) – Text preprocessing and tokenization.
 
-Streamlit – Interactive web-based interface.
+- TensorFlow Hub – Universal Sentence Encoder – For semantic similarity evaluation.
 
-Hugging Face
+- Streamlit – Interactive web-based interface.
 
-Mistral-7B-Instruct-v0.2 – For generating professional feedback and email content.
+- Hugging Face
 
-Langchain
+- Mistral-7B-Instruct-v0.2 – For generating professional feedback and email content.
 
-Application Structure
+- Langchain
 
-1. Resume Collecting App
+**Application Structure**
 
-File: resume_collecting_app.py
+- 1. **Resume Collecting App**
 
-Function: Provides an interface for candidates to upload resumes.
+- File: resume_collecting_app.py
 
-Resumes are saved automatically to the uploaded_resumes folder.
+- Function: Provides an interface for candidates to upload resumes.
 
-2. Resume Analysis App
+- Resumes are saved automatically to the uploaded_resumes folder.
 
-Files:
+2. **Resume Analysis App**
 
-app.py – Main application file for analysis and feedback.
+- Files:
 
-resume_scoring.py – Logic for resume scoring based on skills and experience.
+- analysis_app.py – Main application file for analysis and feedback.
 
-resume_extraction.py – Extracts details like skills, work experience, and contact information.
+- scor_pred.py – Logic for resume scoring based on skills and experience.
 
-feedback_generation.py – Calls Hugging Face API to generate recruiter feedback and email drafts.
+- resume_section.py – Extracts details like skills, work experience, and contact information.
 
-requirements.txt – Lists required libraries and dependencies.
+- llm_feedback.py – Calls Hugging Face API to generate recruiter feedback and email drafts.
 
-How It Works
+- job_description_datasets: uploaded job description file in pdf format
+- uploaded_resumes: collected resumes from resume_collecting_app application
+- nltk_work: preprocessing of resumes
+- helper.py: resume loading and cleaning
 
-Upload Resumes: Candidates upload resumes via the collecting app.
+**How It Works**
 
-Analyze Resumes: Recruiters input a job description, and the analysis app evaluates each uploaded resume.
+- Upload Resumes: Candidates upload resumes via the collecting app.
 
-Score and Feedback: Resumes are scored based on alignment with the job description, and professional feedback is generated for each candidate.
+- Analyze Resumes: Recruiters input a job description, and the analysis app evaluates each uploaded resume.
 
-Email Drafts: Selection or rejection email templates are auto-generated with candidate-specific feedback.
+- Score and Feedback: Resumes are scored based on alignment with the job description, and professional feedback is generated for each candidate.
 
-Contributing
+- Email Drafts: Selection or rejection email templates are auto-generated with candidate-specific feedback.
+
+**Contributing**
 
 Contributions are welcome! Feel free to submit issues or pull requests.
 
-Contact
+**Contact**
 
 For inquiries or suggestions, reach out to Ashis Khan via GitHub or LinkedIn.
 
